@@ -126,10 +126,7 @@ pub contract Epix: NonFungibleToken {
         }
 
         // claim
-        // resource owners when claiming Mint new NFTs and burn the claimID resource.
-        // If claimNFT has components the resource owner also needs to own editions of those
-        // and give permission to burn them in order for the claim to succeed
-        // finally new NFT's are deposited to collection
+        // resource owners when claiming, Mint new NFTs and burn the claimID resource.
         pub fun claim(claimID: UInt64) {
             pre {
                 self.ownedNFTs[claimID] != nil : "missing claim NFT"
